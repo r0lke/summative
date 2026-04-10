@@ -8,3 +8,6 @@
 Over time, the player unlocks new attacks, expanding the set of available choices and increasing strategic depth. Enemy health varies each encounter, forcing the player to constantly adapt their attack combinations.
 
 The game uses a knapsack-based dynamic programming system to compute the most effective combo for the current situation, while still allowing the player to experiment or rely on an “optimize” option for guidance.
+
+<br>
+# Plan
