@@ -4,8 +4,8 @@
 - [ ] Define a single attack structure: `id`, `name`, `energy_cost`, `damage`
 - [ ] Create a starter set of 5–7 attacks with varied cost/damage ratios
 - [ ] Define player structure: `max_energy`, `current_energy`, `unlocked_attacks[]`, `hp`
-- [ ] Define enemy structure: `name`, `max_hp`, `current_hp` (randomized per encounter)
-- [] Define a Turn context object: `enemy_hp`, `player_energy`, `available_attacks[]`
+- [x] Define enemy structure: `name`, `max_hp`, `current_hp` (randomized per encounter)
+- [ ] Define a Turn context object: `enemy_hp`, `player_energy`, `available_attacks[]`
 
 ---
 
