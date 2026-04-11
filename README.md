@@ -17,4 +17,4 @@ The game uses a knapsack-based dynamic programming system to compute the most ef
 
 * 13.04 make todo list
 * 20.04 make first full working version of the game
-* idk (vladimir vladimirovichn don't want to tell❤️) make final version of the game
+* idk (vladimir vladimirovichn didn't want to tell❤️) make final version of the game
