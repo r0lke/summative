@@ -53,6 +53,4 @@
 
 ## Phase 6 — Polish & Wrap-up
 - [ ] Write a README: how to install, how to run, screenshot or GIF
-- [ ] Comment the knapsack DP algorithm thoroughly — useful for portfolio and code review
 - [ ] Refactor into modules: `dp.py` / `game_logic.py` / `ui.py` / `data.py`
-- [ ] Final playtest with someone else — note any confusing moments and fix them
