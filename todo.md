@@ -1,57 +1,31 @@
-# Combo Arena — Development TODO
 
-## Phase 1 — Data & Structures
-- [ ] Define a single attack structure: `id`, `name`, `energy_cost`, `damage`
-- [ ] Create a starter set of 5–7 attacks with varied cost/damage ratios
-- [ ] Define player structure: `max_energy`, `current_energy`, `unlocked_attacks[]`, `hp`
-- [ ] Define enemy structure: `name`, `max_hp`, `current_hp` (randomized per encounter)
-- [ ] Define a Turn context object: `enemy_hp`, `player_energy`, `available_attacks[]`
+### Setup
+- [ ] Init pygame, game loop, state machine (`MENU` `BATTLE` `LEVEL_UP` `GAME_OVER`)
 
----
+### Player
+- [ ] `energy` — persists between fights
+- [ ] `attacks` list — new attack unlocked every N enemies
+- [ ] `gain_energy(amount)` and `add_attack(attack)`
 
-## Phase 2 — Knapsack DP Algorithm (core mechanic)
-- [ ] Implement basic 0w/1 knapsack DP: `dp[e]` = max damage at energy budget `e`
-- [ ] Add backtracking to recover the list of chosen attacks from the knapsack DP table
-- [ ] Write unit tests: zero energy, single attack, all cheap, exact budget fit
-- [ ] Enforce the rule: each attack can be used at most once per turn (0/1 knapsack constraint)
-- [ ] *(Optional)* Add unbounded knapsack mode as a separate flag if repeats are allowed
+### Enemy
+- [ ] Random `health` scaling with wave number
+- [ ] `energy_reward` — often less than needed to win next enemy
 
----
+### Knapsack Core
+- [ ] `solve(energy, attacks)` → optimal attack combo via DP
+- [ ] capacity = current energy, items = attacks (cost/damage)
+- [ ] `can_win(combo, enemy_hp)` check
 
-## Phase 3 — Game Logic
-- [ ] Implement turn loop: `player_turn()` → `enemy_turn()` → `check_win()` → `next_round()`
-- [ ] Implement `apply_combo(attacks[])`: sum damage, reduce enemy HP, spend energy
-- [ ] Implement simple enemy AI: fixed or randomized damage per turn
-- [ ] Implement win/loss conditions: `enemy.hp <= 0` → win; `player.hp <= 0` → game over
-- [ ] Implement attack unlock system: after each win, offer 1–2 new attacks to choose from
-- [ ] Implement enemy generation: random HP in a range that grows each round
-- [ ] Decide and implement energy restore rule: full restore vs partial between turns
+### Battle
+- [ ] Show enemy HP, player energy, available attacks
+- [ ] Player picks attacks manually; DP suggests optimal combo
+- [ ] Apply damage, check win/loss
 
----
+### Progression
+- [ ] Every N kills → unlock new attack
+- [ ] Enemy HP and reward scale per wave
 
-## Phase 4 — UI
-- [ ] Choose UI platform: console / HTML+JS / Tkinter / Pygame — lock in before starting
-- [ ] Battle screen: show enemy HP bar and player energy counter, updated each turn
-- [ ] Display available attacks with name, energy cost, and damage value
-- [ ] Allow manual attack selection: click or type number; show running energy cost
-- [ ] Add "Optimize" button: runs knapsack DP and highlights the optimal combo; player can accept or override
-- [ ] Add "Attack" button: applies the chosen combo; disabled if energy is exceeded
-- [ ] Add a battle log / event feed: `"You used Slash (cost 3) — enemy loses 18 HP"`
-- [ ] Win / game over screen: show total damage dealt, offer unlock choice or restart
-
----
-
-## Phase 5 — UX & Balance
-- [ ] Playtest: complete 5 consecutive fights and check if difficulty ramps naturally
-- [ ] Run knapsack DP on all attacks at max energy — verify no single attack is always dominant
-- [ ] Ensure attack variety: fast-cheap, slow-heavy, and middle-ground options all see use
-- [ ] Add minimal visual feedback on hit: HP flash, bar pulse, or a simple beep
-- [ ] *(Optional)* Save progress to a JSON file: unlocked attacks, current round
-- [ ] Add a first-turn hint: `"Tip: press Optimize to find the best combo"`
-
----
-
-## Phase 6 — Polish & Wrap-up
-- [ ] Write a README: how to install, how to run, screenshot or GIF
-- [ ] Refactor into modules: `dp.py` / `game_logic.py` / `ui.py` / `data.py`
-- [ ] Final playtest with someone else — note any confusing moments and fix them
+### UI
+- [ ] HUD: energy, wave, attack list with cost/damage
+- [ ] Highlight DP-optimal selection
+- [ ] Game over / win screens
