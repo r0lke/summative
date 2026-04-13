@@ -5,7 +5,7 @@
 - [ ] Create a starter set of 5–7 attacks with varied cost/damage ratios
 - [ ] Define player structure: `max_energy`, `current_energy`, `unlocked_attacks[]`, `hp`
 - [ ] Define enemy structure: `name`, `max_hp`, `current_hp` (randomized per encounter)
-- [] Define a Turn context object: `enemy_hp`, `player_energy`, `available_attacks[]`
+- [ ] Define a Turn context object: `enemy_hp`, `player_energy`, `available_attacks[]`
 
 ---
 
@@ -54,3 +54,4 @@
 ## Phase 6 — Polish & Wrap-up
 - [ ] Write a README: how to install, how to run, screenshot or GIF
 - [ ] Refactor into modules: `dp.py` / `game_logic.py` / `ui.py` / `data.py`
+- [ ] Final playtest with someone else — note any confusing moments and fix them
