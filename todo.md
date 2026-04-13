@@ -10,7 +10,7 @@
 ---
 
 ## Phase 2 — Knapsack DP Algorithm (core mechanic)
-- [ ] Implement basic 0/1 knapsack DP: `dp[e]` = max damage at energy budget `e`
+- [ ] Implement basic 0w/1 knapsack DP: `dp[e]` = max damage at energy budget `e`
 - [ ] Add backtracking to recover the list of chosen attacks from the knapsack DP table
 - [ ] Write unit tests: zero energy, single attack, all cheap, exact budget fit
 - [ ] Enforce the rule: each attack can be used at most once per turn (0/1 knapsack constraint)
