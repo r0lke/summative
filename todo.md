@@ -27,5 +27,6 @@
 
 ### UI
 - [ ] HUD: energy, wave, attack list with cost/damage
+- [x] Generate enemy picture
 - [ ] Highlight DP-optimal selection
 - [ ] Game over / win screens
